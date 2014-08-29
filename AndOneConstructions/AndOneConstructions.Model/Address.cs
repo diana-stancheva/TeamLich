@@ -1,4 +1,4 @@
-namespace AndOneConstructionsModelHbr
+namespace AndOneConstructions.Model
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-namespace AndOneConstructionsModelHbr
+namespace AndOneConstructions.Model
 {
     using System;
     using System.Collections.Generic;
@@ -6,19 +6,16 @@ namespace AndOneConstructionsModelHbr
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Department
+    public partial class Building
     {
-        public Department()
-        {
-            Employees = new HashSet<Employee>();
-        }
-
-        public int DepartmentId { get; set; }
+        public int BuildingId { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        public int ConstructionSiteId { get; set; }
+
+        public virtual ConstructionSite ConstructionSite { get; set; }
     }
 }

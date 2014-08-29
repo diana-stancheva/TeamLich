@@ -62,7 +62,7 @@
       <Name>AndOneConstructions.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Model\AndOneConstructions.Model.csproj">
-      <Project>{d2129222-8039-4cf9-b36f-ec7975cb60db}</Project>
+      <Project>{09f3c1e8-6dd0-4215-a3f5-12b35d30790e}</Project>
       <Name>AndOneConstructions.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">

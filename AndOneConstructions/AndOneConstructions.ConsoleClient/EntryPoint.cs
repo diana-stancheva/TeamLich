@@ -10,12 +10,13 @@
 
     using AndOneConstructions.Controller;
     using AndOneConstructions.Data;
+    using AndOneConstructions.Model;
 
     class EntryPoint
     {
         static void Main()
         {
-            var db = new AndOneConstructionsModelHbr.AndOneConstaructionsContext();
+            var db = new AndOneConstructionsContext();
 
             var buildings = db.Buildings.ToArray();
 

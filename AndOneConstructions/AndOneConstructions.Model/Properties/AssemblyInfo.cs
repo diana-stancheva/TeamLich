@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AndOneConstructionsModelHbr")]
+[assembly: AssemblyTitle("AndOneConstructions.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AndOneConstructionsModelHbr")]
+[assembly: AssemblyProduct("AndOneConstructions.Model")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("212b5e8f-8009-4134-900d-60b24fcb11d2")]
+[assembly: Guid("2508d682-9ea7-44fe-ab29-c2d1f389aa76")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,14 +1,14 @@
-namespace AndOneConstructionsModelHbr
+namespace AndOneConstructions.Model
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class AndOneConstaructionsContext : DbContext
+    public partial class AndOneConstructionsContext : DbContext
     {
-        public AndOneConstaructionsContext()
-            : base("name=AndOneConstaructionsContext")
+        public AndOneConstructionsContext()
+            : base("name=AndOneConstructionsContext")
         {
         }
 

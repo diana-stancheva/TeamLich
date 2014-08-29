@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3658B70E-A0AC-451F-A4FC-C6F318207D79}</ProjectGuid>
+    <ProjectGuid>{09F3C1E8-6DD0-4215-A3F5-12B35D30790E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndOneConstructionsModelHbr</RootNamespace>
-    <AssemblyName>AndOneConstructionsModelHbr</AssemblyName>
+    <RootNamespace>AndOneConstructions.Model</RootNamespace>
+    <AssemblyName>AndOneConstructions.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
-    <Compile Include="AndOneConstaructionsContext.cs" />
+    <Compile Include="AndOneConstructionsContext.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ConstructionSite.cs" />
