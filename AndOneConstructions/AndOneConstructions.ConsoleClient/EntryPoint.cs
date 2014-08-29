@@ -22,9 +22,21 @@
             //    Console.WriteLine(b.Name);
             //}
 
-            //TEST MONGO
-            var test = new MongoDBEmployee();
-            test.PrintAllEntities();
+            ////TEST MONGO
+            //var test = new MongoDBEmployee();
+            //test.PrintAllEntities();
+
+            //Test Mongo Import
+
+
+            using (var db = new AndOneConstructionsDataContext())
+            {
+                var employees = db.Employees.ToList();
+                foreach (var item in employees)
+                {
+                    Console.WriteLine(item.FirstName + ' ' + item.LastName);
+                }
+            }
 
         }
     }

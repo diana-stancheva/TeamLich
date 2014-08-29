@@ -4,13 +4,33 @@
     using System;
     using System.Linq;
 
-    using AndOneConstructions.Data;
+    using MongoDB.Data.Context;
+    using AndOneConstructions.Model;
+    using MongoDB.Driver;
 
     public static class ImportDataController
     {
-        public static void ImportDataFromMongoDB()
+        public static void ImportMongoDBEmployees()
         {
-            throw new NotImplementedException();
+            using (var db = new AndOneConstructionsContext() )
+            {
+                var employee = new MongoDBEmployee();
+                MongoCollection<MongoDBEmployee> employeeCollection = employee.GetAllEntities();
+
+                foreach (var emp in employeeCollection.FindAll())
+                {
+                    var isInDB = db.Employees.Select(e => e.FirstName == emp.FirstName && e.LastName == emp.LastName).FirstOrDefault();
+
+                    if (isInDB == null)
+                    {
+                        db.Employees.Add(new Employee
+                        {
+                            FirstName = emp.FirstName,
+                            LastName = emp.LastName
+                        });
+                    }
+                }
+            }
         }
 
         public static void ImportDataFromZIP()

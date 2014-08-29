@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Data", "MongoDB.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Controller", "AndOneConstructions.Controller\AndOneConstructions.Controller.csproj", "{7BB35258-65CC-4341-B2FF-166BAB43C1C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Model", "AndOneConstructions.Model\AndOneConstructions.Model.csproj", "{D2129222-8039-4CF9-B36F-EC7975CB60DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

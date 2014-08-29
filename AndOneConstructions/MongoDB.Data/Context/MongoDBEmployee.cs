@@ -27,7 +27,7 @@
             }
         }
 
-        public MongoCollection<MongoDBEmployee> GetAllEntities(string dbName, string collectionName)
+        public MongoCollection<MongoDBEmployee> GetAllEntities(string dbName = "AndOneConstructions", string collectionName = "Employees")
         {
             var database = DBConnection.GetDBConnection(dbName);
 
