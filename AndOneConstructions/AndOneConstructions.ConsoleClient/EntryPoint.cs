@@ -27,8 +27,8 @@
             }
 
             ////TEST MONGO
-            //var test = new MongoDBEmployee();
-            //test.PrintAllEntities();
+            var test = new MongoDBEmployee();
+            test.PrintAllEntities();
 
             //Test Mongo Import
 

@@ -68,10 +68,6 @@
       <Project>{09f3c1e8-6dd0-4215-a3f5-12b35d30790e}</Project>
       <Name>AndOneConstructions.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AndOneConstructionsModelHbr\AndOneConstructionsModelHbr.csproj">
-      <Project>{3658b70e-a0ac-451f-a4fc-c6f318207d79}</Project>
-      <Name>AndOneConstructionsModelHbr</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">
       <Project>{e29d5c08-aa6c-4ace-8376-3807e6036f21}</Project>
       <Name>MongoDB.Data</Name>

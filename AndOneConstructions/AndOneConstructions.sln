@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Data", "MongoDB.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Controller", "AndOneConstructions.Controller\AndOneConstructions.Controller.csproj", "{7BB35258-65CC-4341-B2FF-166BAB43C1C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructionsModelHbr", "AndOneConstructionsModelHbr\AndOneConstructionsModelHbr.csproj", "{3658B70E-A0AC-451F-A4FC-C6F318207D79}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Model", "AndOneConstructions.Model\AndOneConstructions.Model.csproj", "{09F3C1E8-6DD0-4215-A3F5-12B35D30790E}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB35258-65CC-4341-B2FF-166BAB43C1C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09F3C1E8-6DD0-4215-A3F5-12B35D30790E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09F3C1E8-6DD0-4215-A3F5-12B35D30790E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F3C1E8-6DD0-4215-A3F5-12B35D30790E}.Release|Any CPU.ActiveCfg = Release|Any CPU

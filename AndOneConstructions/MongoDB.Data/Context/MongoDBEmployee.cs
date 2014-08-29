@@ -15,7 +15,7 @@
 
         public string Department { get; set; }
 
-        public void PrintAllEntities(string dbName = "AndOneConstructions", string collectionName = "Employees")
+        public void PrintAllEntities(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Employees")
         {
             var database = DBConnection.GetDBConnection(dbName);
 
@@ -27,7 +27,7 @@
             }
         }
 
-        public MongoCollection<MongoDBEmployee> GetAllEntities(string dbName = "AndOneConstructions", string collectionName = "Employees")
+        public MongoCollection<MongoDBEmployee> GetAllEntities(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Employees")
         {
             var database = DBConnection.GetDBConnection(dbName);
 
