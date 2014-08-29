@@ -1,0 +1,12 @@
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Data.dll.config
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Data.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Data.pdb
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\FluentMongo.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Bson.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Driver.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDbProvider.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Bson.xml
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\bin\Debug\MongoDB.Driver.xml
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\obj\Debug\MongoDB.Data.csprojResolveAssemblyReference.cache
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\obj\Debug\MongoDB.Data.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\MongoDB.Data\obj\Debug\MongoDB.Data.pdb
