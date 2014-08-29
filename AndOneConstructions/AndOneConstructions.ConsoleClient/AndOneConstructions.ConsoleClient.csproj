@@ -56,9 +56,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AndOneConstructions.Controller\AndOneConstructions.Controller.csproj">
+      <Project>{7bb35258-65cc-4341-b2ff-166bab43c1c6}</Project>
+      <Name>AndOneConstructions.Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Data\AndOneConstructions.Data.csproj">
       <Project>{892cb46f-b7a4-4813-9b79-e1033931eb2e}</Project>
       <Name>AndOneConstructions.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AndOneConstructions.Model\AndOneConstructions.Model.csproj">
+      <Project>{d2129222-8039-4cf9-b36f-ec7975cb60db}</Project>
+      <Name>AndOneConstructions.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">
       <Project>{e29d5c08-aa6c-4ace-8376-3807e6036f21}</Project>

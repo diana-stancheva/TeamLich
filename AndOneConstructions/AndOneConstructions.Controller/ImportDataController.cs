@@ -26,7 +26,8 @@
                         db.Employees.Add(new Employee
                         {
                             FirstName = emp.FirstName,
-                            LastName = emp.LastName
+                            LastName = emp.LastName,
+                            Department = new Department { Name = emp.Department}
                         });
                     }
                 }

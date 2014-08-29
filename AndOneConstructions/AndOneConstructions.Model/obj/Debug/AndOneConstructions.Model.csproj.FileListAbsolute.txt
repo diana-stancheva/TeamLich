@@ -1,0 +1,10 @@
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\AndOneConstructions.Model.dll.config
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\AndOneConstructions.Model.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\AndOneConstructions.Model.pdb
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\EntityFramework.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\EntityFramework.xml
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\obj\Debug\AndOneConstructions.Model.csprojResolveAssemblyReference.cache
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\obj\Debug\AndOneConstructions.Model.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Model\obj\Debug\AndOneConstructions.Model.pdb
