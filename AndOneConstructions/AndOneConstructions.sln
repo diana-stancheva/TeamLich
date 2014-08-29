@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Control
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Model", "AndOneConstructions.Model\AndOneConstructions.Model.csproj", "{D2129222-8039-4CF9-B36F-EC7975CB60DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructionsModelHbr", "AndOneConstructionsModelHbr\AndOneConstructionsModelHbr.csproj", "{3658B70E-A0AC-451F-A4FC-C6F318207D79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2129222-8039-4CF9-B36F-EC7975CB60DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3658B70E-A0AC-451F-A4FC-C6F318207D79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

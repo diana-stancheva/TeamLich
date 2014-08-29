@@ -32,3 +32,5 @@ E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClie
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClient\bin\Debug\AndOneConstructions.Model.pdb
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClient\bin\Debug\AndOneConstructions.Data.dll
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClient\bin\Debug\AndOneConstructions.Data.pdb
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClient\bin\Debug\AndOneConstructionsModelHbr.dll
+E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.ConsoleClient\bin\Debug\AndOneConstructionsModelHbr.pdb

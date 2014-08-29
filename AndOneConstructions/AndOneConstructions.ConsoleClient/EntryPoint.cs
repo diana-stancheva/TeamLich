@@ -15,7 +15,7 @@
     {
         static void Main()
         {
-            var db = new AndOneConstructionsDataContext();
+            var db = new AndOneConstructionsModelHbr.AndOneConstaructionsContext();
 
             var buildings = db.Buildings.ToArray();
 
