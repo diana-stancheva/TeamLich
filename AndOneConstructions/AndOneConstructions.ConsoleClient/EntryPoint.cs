@@ -22,10 +22,20 @@
  * Password: 	6vULZxqG4R6jrzudTKdpEpKo6o5EnDiztsPaDvBqvTTGzUkFVuFfNERQSEPLATux
  * 
  * 
+ * За връзка с MySQL през Workbench
+ * 
+ * Hostname 	d93ab522-6908-4034-9827-a396016feca4.mysql.sequelizer.com 	
+ * Username 	omuysinjdtwtmbue 	
+ * Password 	dxSZ7cUWJ7q7PYXKxv855mVAWi62K6nPRDGdbBzERbvUeHQq6qvhd2oYKqdWe3kL
+ * 
+ * 
+ * За връзка към MongoDB
+ * 
+ * mongodb://teamlich:teamlich@ds063929.mongolab.com:63929/appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac
+ * 
  */
 namespace AndOneConstructions.ConsoleClient
 {
-    using AndOneConstructions.Model;
     using System;
     using System.Collections.Generic;
     using System.Linq;
