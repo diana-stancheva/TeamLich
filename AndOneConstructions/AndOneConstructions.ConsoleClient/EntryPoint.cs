@@ -41,32 +41,33 @@ namespace AndOneConstructions.ConsoleClient
     {
         static void Main()
         {
-            //var db = new AndOneConstructionsContext();
+            //TEST SQL 
+            var db = new AndOneConstructionsContext();
 
-            //var buildings = db.Buildings.ToArray();
+            var buildings = db.Buildings.ToArray();
 
-            //// for testing
-            //foreach (var b in buildings)
-            //{
-            //    Console.WriteLine(b.Name);
-            //}
-
-            ////TEST MONGO
-            //var test = new MongoDBEmployee();
-            //test.PrintAllEntities();
-
-            //Test Mongo Import
-
-            ImportDataController.ImportMongoDBEmployees();
-
-            using (var db = new AndOneConstructionsContext())
+            // for testing
+            foreach (var b in buildings)
             {
-                var employees = db.Employees.ToList();
-                foreach (var item in employees)
-                {
-                    Console.WriteLine(item.FirstName + ' ' + item.LastName);
-                }
+                Console.WriteLine(b.Name);
             }
+
+            //TEST MONGO
+            var test = new MongoDBEmployee();
+            test.PrintAllEntities();
+
+            ////Test Mongo Import
+
+            //ImportDataController.ImportMongoDBEmployees();
+
+            //using (var db = new AndOneConstructionsContext())
+            //{
+            //    var employees = db.Employees.ToList();
+            //    foreach (var item in employees)
+            //    {
+            //        Console.WriteLine(item.FirstName + ' ' + item.LastName);
+            //    }
+            //}
 
         }
     }
