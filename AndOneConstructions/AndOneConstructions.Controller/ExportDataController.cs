@@ -20,7 +20,7 @@
                                                             .GroupBy(p => p.StartDate.Value.Month);
 
                 var sorted = projectsGropedByStartMonth.ToList()
-                    .Select( g =>
+                    .Select(g =>
                         new
                         {
                             Month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key),
@@ -32,14 +32,9 @@
 
                 foreach (var group in sorted)
                 {
-                    Console.WriteLine(group.Month + " " + group.Count);
-
                     months.Add(group.Month);
                     numberOfProjects.Add((double)group.Count);
                 }
-
-                Console.WriteLine(string.Join(", ", months));
-                Console.WriteLine(string.Join(", ", numberOfProjects));
 
                 var chartCreator = new ChartCreator(numberOfProjects.ToArray(), months.ToArray(), year);
                 var pdfRenderer = new DocumentRenderer();
