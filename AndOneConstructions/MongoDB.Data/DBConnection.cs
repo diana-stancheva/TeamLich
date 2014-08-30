@@ -1,8 +1,9 @@
 ﻿namespace MongoDB.Data
 {
-    using MongoDB.Driver;
     using System;
     using System.Linq;
+
+    using MongoDB.Driver;
 
     public static class DBConnection
     {

@@ -5,7 +5,7 @@
     using MongoDB.Driver;
     using System;
 
-    class MongoDBProject
+    class MongoDBProject : IMongoEntity<MongoDBProject>
     {
         public ObjectId Id { get; set; }
 
@@ -25,7 +25,7 @@
 
         public string ConstructionSiteName { get; set; }
 
-        public void PrintAllEntities(string dbName = "AndOneConstructions", string collectionName = "Employees")
+        public void PrintAllEntities(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Projects")
         {
             var database = DBConnection.GetDBConnection(dbName);
 
@@ -37,7 +37,7 @@
             }
         }
 
-        public MongoCollection<MongoDBProject> GetAllEntities(string dbName, string collectionName)
+        public MongoCollection<MongoDBProject> GetAllEntitiesAsCollection(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Projects")
         {
             var database = DBConnection.GetDBConnection(dbName);
 

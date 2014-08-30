@@ -15,7 +15,7 @@
             using (var db = new AndOneConstructionsContext() )
             {
                 var employee = new MongoDBEmployee();
-                MongoCollection<MongoDBEmployee> employeeCollection = employee.GetAllEntities();
+                MongoCollection<MongoDBEmployee> employeeCollection = employee.GetAllEntitiesAsCollection();
 
                 foreach (var emp in employeeCollection.FindAll())
                 {

@@ -5,7 +5,7 @@
     using MongoDB.Data;
     using MongoDB.Driver;
 
-    public class MongoDBEmployee
+    public class MongoDBEmployee : IMongoEntity<MongoDBEmployee>
     {
         public ObjectId Id { get; set; }
 
@@ -27,7 +27,7 @@
             }
         }
 
-        public MongoCollection<MongoDBEmployee> GetAllEntities(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Employees")
+        public MongoCollection<MongoDBEmployee> GetAllEntitiesAsCollection(string dbName = "appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac", string collectionName = "Employees")
         {
             var database = DBConnection.GetDBConnection(dbName);
 

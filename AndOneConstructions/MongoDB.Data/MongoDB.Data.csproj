@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\IMongoEntity.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Context\MongoDBEmployee.cs" />
     <Compile Include="Context\MongoDBProject.cs" />
