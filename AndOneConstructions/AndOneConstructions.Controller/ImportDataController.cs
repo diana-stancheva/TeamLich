@@ -2,14 +2,15 @@
 {
     using System;
     using System.Linq;
-    using MongoDB.Driver;
-    using Ionic.Zip;
-    using MongoDB.Data.Context;
-    using AndOneConstructions.Model;
     using System.Data;
     using System.Data.OleDb;
     using System.Collections.Generic;
     using System.Text;
+    using Ionic.Zip;
+    using MongoDB.Driver;
+    using MongoDB.Data.Context;
+    using AndOneConstructions.Model;
+    using System.Data.Entity.Validation;
 
     public static class ImportDataController
     {
@@ -65,7 +66,6 @@
         public static void ImportDataFromExcel(string filePath)
         {
             var data = ReadExcelFile(filePath);
-
             var datareader = data.CreateDataReader();
 
             using (datareader)
@@ -83,12 +83,170 @@
                         string buildingTown = (string)datareader["Building Town"];
                         string constructionSiteName = (string)datareader["Construction Site Name"];
 
-                        //TODO: Check for existing Project Name
-                        //TODO: Check for existing Client
-                        //TODO: Check for existing Building Type
-                        //TODO: Check for existing Address
-                        //TODO: Check for existing Town
-                        //TODO: Check for existing Construction Site Name
+                        using (var db = new AndOneConstructionsContext())
+                        {
+                            //TODO: Check for existing Project Name in DB
+                            var isProjectInDB = db.Projects.Where(p => p.Name == projectName).Count() > 0;
+
+                            //TODO: Check for existing Client in DB
+                            var isClientInDB = db.Clients.Where(c => c.Name == projectClient).Count() > 0;
+
+                            //TODO: Check for existing Building Type in DB
+                            var isBuildigTypeInDB = db.Buildings.Where(b => b.Name == buildingType).Count() > 0;
+
+                            //TODO: Check for existing Address in DB
+                            //var isAddressInDB = db.Addresses.Where(a => a.Details == buildingAddress).Count() > 0;
+
+                            //TODO: Check for existing Town in DB
+                            var isTownInDB = db.Towns.Where(t => t.Name == buildingTown).Count() > 0;
+
+                            //TODO: Check for existing Construction Site Name in DB
+                            //var isConstructionSiteInDB = db.ConstructionSites.Where(cs => cs.Name == constructionSiteName).Count() > 0;
+
+                            var project = new Project();
+
+                            if (isProjectInDB)
+                            {
+                                Console.WriteLine("Project with name:  \"{0}\" exists In DB", projectName);
+                            }
+                            else 
+                            {
+                                project.Name = projectName;
+                                project.StartDate = projectStartDate;
+                                project.EndDate = projectEndDate;
+                            }
+
+                            if (isTownInDB)
+                            {
+                                Console.WriteLine("Town Exist In DB");
+                            }
+
+                            if (isClientInDB)
+                            {
+                                var clientID = db.Clients.Where(c => c.Name == projectClient).FirstOrDefault().ClientId;
+                                project.ClientId = clientID;
+                            }
+                            else
+                            {
+                                project.Client = new Client
+                                {
+                                    Name = projectClient
+                                };
+                            }
+
+                            if (!isTownInDB && !isBuildigTypeInDB)
+                            {
+                                project.ConstructionSites = new HashSet<ConstructionSite>
+                                {
+                                    new ConstructionSite
+                                    {
+                                        Name = constructionSiteName,
+                                        Address = new Address
+                                        {
+                                            Details = buildingAddress,
+                                            Town = new Town {
+                                                Name = buildingTown
+                                            }
+                                        },
+                                        Buildings = new HashSet<Building>
+                                        {
+                                            new Building
+                                            {
+                                                Name = buildingType
+                                            }
+                                        }
+                                    }
+                                };
+                            }
+                            else if (isTownInDB && !isBuildigTypeInDB)
+                            {
+                                var townID = db.Towns.Where(t => t.Name == buildingTown).FirstOrDefault().TownId;
+                                //var building = db.Buildings.Where(b=>b.Name == buildingType).FirstOrDefault();
+
+                                project.ConstructionSites = new HashSet<ConstructionSite>
+                                {
+                                    new ConstructionSite
+                                    {
+                                        Name = constructionSiteName,
+                                        Address = new Address
+                                        {
+                                            Details = buildingAddress,
+                                            TownId = townID
+                                        },
+                                        Buildings = new HashSet<Building>
+                                        {
+                                            new Building
+                                            {
+                                                Name = buildingType
+                                            }
+                                        }
+                                    }
+                                };
+                            }
+                            else if (!isTownInDB && isBuildigTypeInDB)
+                            {
+                                var building = db.Buildings.Where(b=>b.Name == buildingType).FirstOrDefault();
+
+                                project.ConstructionSites = new HashSet<ConstructionSite>
+                                {
+                                    new ConstructionSite
+                                    {
+                                        Name = constructionSiteName,
+                                        Address = new Address
+                                        {
+                                            Details = buildingAddress,
+                                            Town = new Town {
+                                                Name = buildingTown
+                                            }
+                                        },
+                                        Buildings = new HashSet<Building>
+                                        {
+                                            building
+                                        }
+                                    }
+                                };
+                            }
+                            else if(isTownInDB && isBuildigTypeInDB)
+                            {
+                                var townID = db.Towns.Where(t => t.Name == buildingTown).FirstOrDefault().TownId;
+                                var building = db.Buildings.Where(b=>b.Name == buildingType).FirstOrDefault();
+
+                                project.ConstructionSites = new HashSet<ConstructionSite>
+                                {
+                                    new ConstructionSite
+                                    {
+                                        Name = constructionSiteName,
+                                        Address = new Address
+                                        {
+                                            Details = buildingAddress,
+                                            TownId = townID
+                                        },
+                                        Buildings = new HashSet<Building>
+                                        {
+                                            building
+                                        }
+                                    }
+                                };
+                            }
+
+                            db.Projects.Add(project);
+                            try
+                            {
+                                db.SaveChanges();
+                            }
+                            catch (DbEntityValidationException dbEx)
+                            {
+                                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                                {
+                                    foreach (var validationError in validationErrors.ValidationErrors)
+                                    {
+                                        Console.WriteLine("\nProperty: {0} Error: {1}\n", validationError.PropertyName, validationError.ErrorMessage);
+                                    }
+                                }
+                            }
+
+                            Console.WriteLine("Project {0} Added", projectName);
+                        }
                     }
                 }
             }
@@ -120,14 +278,12 @@
 
         public static void ExtractZipFile(string zipPath, string filePath)
         {
-
             //EXTRACTS ALL ARCHIVE
             //using (ZipFile zip = ZipFile.Read("../../../Projects-Reports.zip"))
             //{
             //    zip.ExtractAll("../../../");
             //    Console.WriteLine("Zip Extracted");
             //}
-
             //EXTRACTS ZIP - FILE BY FILE
             using (ZipFile zip = ZipFile.Read(zipPath))
             {
@@ -210,6 +366,5 @@
 
             return sb.ToString();
         }
-
     }
 }
