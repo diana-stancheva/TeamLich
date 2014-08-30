@@ -57,10 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AndOneConstructions.Data\AndOneConstructions.Data.csproj">
-      <Project>{892cb46f-b7a4-4813-9b79-e1033931eb2e}</Project>
-      <Name>AndOneConstructions.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Model\AndOneConstructions.Model.csproj">
       <Project>{09f3c1e8-6dd0-4215-a3f5-12b35d30790e}</Project>
       <Name>AndOneConstructions.Model</Name>

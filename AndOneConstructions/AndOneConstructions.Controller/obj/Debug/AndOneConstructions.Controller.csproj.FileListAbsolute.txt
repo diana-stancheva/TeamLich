@@ -16,5 +16,3 @@ E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\obj\Debug\AndOneConstructions.Controller.csprojResolveAssemblyReference.cache
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\obj\Debug\AndOneConstructions.Controller.dll
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\obj\Debug\AndOneConstructions.Controller.pdb
-E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\bin\Debug\AndOneConstructions.Data.dll
-E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Controller\bin\Debug\AndOneConstructions.Data.pdb
