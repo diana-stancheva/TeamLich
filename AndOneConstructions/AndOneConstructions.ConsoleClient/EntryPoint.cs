@@ -74,6 +74,7 @@ namespace AndOneConstructions.ConsoleClient
                 }
             }
 
+            ImportDataController.ReadDataFromXLSX();
         }
     }
 }

@@ -2,11 +2,14 @@
 {
     using System;
     using System.Linq;
-
-    using MongoDB.Data.Context;
     using MongoDB.Driver;
-
+    using Ionic.Zip;
+    using MongoDB.Data.Context;
     using AndOneConstructions.Model;
+    using System.Data;
+    using System.Data.OleDb;
+    using System.Collections.Generic;
+    using System.Text;
 
     public static class ImportDataController
     {
@@ -49,7 +52,6 @@
                         });
                         db.SaveChanges();
 
-
                         Console.WriteLine("{0} added -> department id {1}", emp.FirstName + " " + emp.LastName, departmentid);
                     }
                     else
@@ -60,17 +62,127 @@
             }
         }
 
-        public static void ImportMongoDBProjects()
+        public static void ReadDataFromXLSX()
         {
-            using (var db = new AndOneConstructionsContext())
+            ExtractZipFile();
+
+            var data = ReadExcelFile();
+
+            var datareader = data.CreateDataReader();
+
+            using (datareader)
             {
-                
+                int counter = 1;
+
+                while (datareader.Read())
+                {
+                    if (datareader["Project Name"] != DBNull.Value)
+                    {
+                        string name = (string)datareader["Project Name"];
+                        //var age = datareader["Start Date"];
+                        //var grade = datareader["End Date"];
+
+                        Console.WriteLine("{1}. Name: {0}", name, counter);
+
+                        counter++;
+                    }
+                }
             }
         }
 
-        public static void ImportDataFromZIP()
+        private static void ExtractZipFile()
         {
-            throw new NotImplementedException();
+
+            //EXTRACTS ALL ARCHIVE
+            //using (ZipFile zip = ZipFile.Read("../../../Projects-Reports.zip"))
+            //{
+            //    zip.ExtractAll("../../../");
+            //    Console.WriteLine("Zip Extracted");
+            //}
+
+            //EXTRACTS ZIP - FILE BY FILE
+            using (ZipFile zip = ZipFile.Read("../../../Projects-Reports.zip"))
+            {
+                foreach (ZipEntry e in zip)
+                {
+                    if (e.FileName == "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx")
+                    {
+                        e.Extract("../../../", ExtractExistingFileAction.OverwriteSilently);
+                        Console.WriteLine("{0} Extracted", e.FileName);
+                    }
+
+                }
+            }
         }
+
+        private static DataSet ReadExcelFile()
+        {
+            DataSet ds = new DataSet();
+
+            string connectionString = GetConnectionString();
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+
+                // Get all Sheets in Excel File
+                DataTable dtSheet = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                // Loop through all Sheets to get data
+                foreach (DataRow dr in dtSheet.Rows)
+                {
+                    string sheetName = dr["TABLE_NAME"].ToString();
+
+                    if (!sheetName.EndsWith("$"))
+                        continue;
+
+                    // Get all rows from the Sheet
+                    cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
+
+                    DataTable dt = new DataTable();
+                    dt.TableName = sheetName;
+
+                    OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    ds.Tables.Add(dt);
+                }
+
+                cmd = null;
+                conn.Close();
+            }
+
+            return ds;
+        }
+
+        private static string GetConnectionString()
+        {
+            Dictionary<string, string> props = new Dictionary<string, string>();
+
+            // XLSX - Excel 2007, 2010, 2012, 2013
+            props["Provider"] = "Microsoft.ACE.OLEDB.12.0;";
+            props["Extended Properties"] = "Excel 12.0 XML";
+            props["Data Source"] = "../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx";
+
+            // XLS - Excel 2003 and Older
+            //props["Provider"] = "Microsoft.Jet.OLEDB.4.0";
+            //props["Extended Properties"] = "Excel 8.0";
+            //props["Data Source"] = "../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx";
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (KeyValuePair<string, string> prop in props)
+            {
+                sb.Append(prop.Key);
+                sb.Append('=');
+                sb.Append(prop.Value);
+                sb.Append(';');
+            }
+
+            return sb.ToString();
+        }
+
     }
 }
