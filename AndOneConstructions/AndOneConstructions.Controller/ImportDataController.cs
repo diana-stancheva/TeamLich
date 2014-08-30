@@ -230,6 +230,8 @@
                             }
 
                             db.Projects.Add(project);
+
+                            //TODO: Find this error
                             try
                             {
                                 db.SaveChanges();
