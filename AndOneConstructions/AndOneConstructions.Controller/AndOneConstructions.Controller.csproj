@@ -39,15 +39,31 @@
     <Reference Include="Ionic.Zip">
       <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
     </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
       <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +79,10 @@
     <ProjectReference Include="..\AndOneConstructions.Model\AndOneConstructions.Model.csproj">
       <Project>{09f3c1e8-6dd0-4215-a3f5-12b35d30790e}</Project>
       <Name>AndOneConstructions.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AndOneConstructions.PdfGenerator\AndOneConstructions.PdfGenerator.csproj">
+      <Project>{5b5dbab3-2c3d-4a3a-9c30-56aa21286c7b}</Project>
+      <Name>AndOneConstructions.PdfGenerator</Name>
     </ProjectReference>
     <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">
       <Project>{e29d5c08-aa6c-4ace-8376-3807e6036f21}</Project>

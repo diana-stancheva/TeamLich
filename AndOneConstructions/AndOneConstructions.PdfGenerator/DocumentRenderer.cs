@@ -20,7 +20,7 @@
             renderer.RenderDocument();
 
             // Save the document in bin directory
-            renderer.PdfDocument.Save(fileName);
+            renderer.PdfDocument.Save(fileName + ".pdf");
         }
 
         public void Render(string fileName)

@@ -61,24 +61,26 @@ namespace AndOneConstructions.ConsoleClient
             //var test = new MongoDBEmployee();
             //test.PrintAllEntities();
 
-            //Test Mongo Import
-            ImportDataController.ImportMongoDBEmployees();
+            ////Test Mongo Import
+            //ImportDataController.ImportMongoDBEmployees();
 
-            using (var db = new AndOneConstructionsContext())
-            {
-                var employees = db.Employees.ToList();
-                foreach (var item in employees)
-                {
-                    Console.WriteLine(item.FirstName + ' ' + item.LastName);
-                }
-            }
+            //using (var db = new AndOneConstructionsContext())
+            //{
+            //    var employees = db.Employees.ToList();
+            //    foreach (var item in employees)
+            //    {
+            //        Console.WriteLine(item.FirstName + ' ' + item.LastName);
+            //    }
+            //}
 
-            //Test ZIP Extracting and XLSX Reader
-            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
-            ImportDataController.ReadDataFromXLSX("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            ////Test ZIP Extracting and XLSX Reader
+            //ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            //ImportDataController.ReadDataFromXLSX("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
 
-            //TEST IMPORTING FROM EXCEL TO SQL
-            ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            ////TEST IMPORTING FROM EXCEL TO SQL
+            //ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+
+            ExportDataController.ExportPdfReport(2013);
         }
     }
 }

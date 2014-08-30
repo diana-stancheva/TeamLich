@@ -6,11 +6,13 @@
     {
         private double[] values;
         private string[] xAxesValues;
+        private int year;
 
-        public ChartCreator(double[] values, string[] xAxesValues)
+        public ChartCreator(double[] values, string[] xAxesValues, int year)
         {
             this.values = values;
             this.xAxesValues = xAxesValues;
+            this.year = year;
         }
 
         public Document CreateDocument()
@@ -22,7 +24,7 @@
             section.PageSetup.LeftMargin = Unit.FromCentimeter(0.5);
 
             section.AddParagraph("And One Constructions Inc.", "Heading1");
-            section.AddParagraph("Projects By Month", "Heading2");
+            section.AddParagraph("Projects Started In" + " " + year, "Heading2");
 
             Chart chart = new Chart();
             chart.Left = 0;
@@ -38,7 +40,6 @@
             xseries.Add(this.xAxesValues);
 
             chart.XAxis.MajorTickMark = TickMarkType.Outside;
-            chart.XAxis.Title.Caption = "Months";
 
             chart.YAxis.MajorTickMark = TickMarkType.Outside;
             chart.YAxis.HasMajorGridlines = true;
