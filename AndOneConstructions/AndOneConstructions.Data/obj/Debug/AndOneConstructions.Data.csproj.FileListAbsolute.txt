@@ -5,6 +5,5 @@ E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\bin\De
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\bin\Debug\EntityFramework.SqlServer.dll
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\bin\Debug\EntityFramework.xml
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\bin\Debug\EntityFramework.SqlServer.xml
-E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\obj\Debug\AndOneConstructions.Data.csprojResolveAssemblyReference.cache
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\obj\Debug\AndOneConstructions.Data.dll
 E:\Documents\GitHub\TeamLich\AndOneConstructions\AndOneConstructions.Data\obj\Debug\AndOneConstructions.Data.pdb

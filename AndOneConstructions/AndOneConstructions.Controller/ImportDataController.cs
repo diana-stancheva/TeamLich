@@ -49,6 +49,7 @@
                         });
                         db.SaveChanges();
 
+
                         Console.WriteLine("{0} added -> department id {1}", emp.FirstName + " " + emp.LastName, departmentid);
                     }
                     else
