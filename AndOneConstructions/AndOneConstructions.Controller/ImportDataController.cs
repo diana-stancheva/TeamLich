@@ -62,6 +62,38 @@
             }
         }
 
+        public static void ImportDataFromExcel(string filePath)
+        {
+            var data = ReadExcelFile(filePath);
+
+            var datareader = data.CreateDataReader();
+
+            using (datareader)
+            {
+                while (datareader.Read())
+                {
+                    if (datareader["Project Name"] != DBNull.Value)
+                    {
+                        string projectName = (string)datareader["Project Name"];
+                        DateTime projectStartDate = (DateTime)datareader["Start Date"];
+                        DateTime projectEndDate = (DateTime)datareader["End Date"];
+                        string projectClient = (string)datareader["Client"];
+                        string buildingType = (string)datareader["Building Type"];
+                        string buildingAddress = (string)datareader["Building Address"];
+                        string buildingTown = (string)datareader["Building Town"];
+                        string constructionSiteName = (string)datareader["Construction Site Name"];
+
+                        //TODO: Check for existing Project Name
+                        //TODO: Check for existing Client
+                        //TODO: Check for existing Building Type
+                        //TODO: Check for existing Address
+                        //TODO: Check for existing Town
+                        //TODO: Check for existing Construction Site Name
+                    }
+                }
+            }
+        }
+
         public static void ReadDataFromXLSX(string filePath)
         {
             var data = ReadExcelFile(filePath);
@@ -77,8 +109,8 @@
                     if (datareader["Project Name"] != DBNull.Value)
                     {
                         string name = (string)datareader["Project Name"];
-                        
-                        Console.WriteLine("{1}. Name: {0}", name, counter);
+                        DateTime date = (DateTime)datareader["Start Date"];
+                        Console.WriteLine("{0}. Name: {1}, Start Date: {2}", counter, name, date);
 
                         counter++;
                     }
