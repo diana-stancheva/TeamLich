@@ -74,7 +74,8 @@ namespace AndOneConstructions.ConsoleClient
                 }
             }
 
-            ImportDataController.ReadDataFromXLSX();
+            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            ImportDataController.ReadDataFromXLSX("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
         }
     }
 }

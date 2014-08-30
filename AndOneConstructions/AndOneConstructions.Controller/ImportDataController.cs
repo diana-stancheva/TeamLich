@@ -62,11 +62,9 @@
             }
         }
 
-        public static void ReadDataFromXLSX()
+        public static void ReadDataFromXLSX(string filePath)
         {
-            ExtractZipFile();
-
-            var data = ReadExcelFile();
+            var data = ReadExcelFile(filePath);
 
             var datareader = data.CreateDataReader();
 
@@ -90,7 +88,7 @@
             }
         }
 
-        private static void ExtractZipFile()
+        public static void ExtractZipFile(string zipPath, string filePath)
         {
 
             //EXTRACTS ALL ARCHIVE
@@ -101,25 +99,24 @@
             //}
 
             //EXTRACTS ZIP - FILE BY FILE
-            using (ZipFile zip = ZipFile.Read("../../../Projects-Reports.zip"))
+            using (ZipFile zip = ZipFile.Read(zipPath))
             {
                 foreach (ZipEntry e in zip)
                 {
-                    if (e.FileName == "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx")
+                    if (e.FileName == filePath)
                     {
                         e.Extract("../../../", ExtractExistingFileAction.OverwriteSilently);
                         Console.WriteLine("{0} Extracted", e.FileName);
                     }
-
                 }
             }
         }
 
-        private static DataSet ReadExcelFile()
+        private static DataSet ReadExcelFile(string filePath)
         {
             DataSet ds = new DataSet();
 
-            string connectionString = GetConnectionString();
+            string connectionString = GetConnectionString(filePath);
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
@@ -157,14 +154,14 @@
             return ds;
         }
 
-        private static string GetConnectionString()
+        private static string GetConnectionString(string filePath)
         {
             Dictionary<string, string> props = new Dictionary<string, string>();
 
             // XLSX - Excel 2007, 2010, 2012, 2013
             props["Provider"] = "Microsoft.ACE.OLEDB.12.0;";
             props["Extended Properties"] = "Excel 12.0 XML";
-            props["Data Source"] = "../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx";
+            props["Data Source"] = filePath;
 
             // XLS - Excel 2003 and Older
             //props["Provider"] = "Microsoft.Jet.OLEDB.4.0";
