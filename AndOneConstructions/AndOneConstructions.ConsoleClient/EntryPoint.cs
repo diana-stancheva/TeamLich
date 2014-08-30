@@ -62,7 +62,6 @@ namespace AndOneConstructions.ConsoleClient
             //test.PrintAllEntities();
 
             //Test Mongo Import
-
             ImportDataController.ImportMongoDBEmployees();
 
             using (var db = new AndOneConstructionsContext())
@@ -74,6 +73,7 @@ namespace AndOneConstructions.ConsoleClient
                 }
             }
 
+            //Test ZIP Extracting and XLSX Reader
             ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
             ImportDataController.ReadDataFromXLSX("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
         }

@@ -77,9 +77,7 @@
                     if (datareader["Project Name"] != DBNull.Value)
                     {
                         string name = (string)datareader["Project Name"];
-                        //var age = datareader["Start Date"];
-                        //var grade = datareader["End Date"];
-
+                        
                         Console.WriteLine("{1}. Name: {0}", name, counter);
 
                         counter++;
