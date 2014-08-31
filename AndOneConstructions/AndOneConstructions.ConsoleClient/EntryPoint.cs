@@ -37,15 +37,18 @@
 namespace AndOneConstructions.ConsoleClient
 {
     using System;
+    using System.Globalization;
     using System.Linq;
+    using System.Threading;
 
     using AndOneConstructions.Controller;
     using AndOneConstructions.Model;
 
-    class EntryPoint
+    public class EntryPoint
     {
-        static void Main()
+        public static void Main()
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             ////TEST SQL 
             //var db = new AndOneConstructionsContext();
 

@@ -1,11 +1,12 @@
 ﻿namespace AndOneConstructions.Controller
 {
-    using AndOneConstructions.Model;
-    using AndOneConstructions.PdfGenerator;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+
+    using AndOneConstructions.Model;
+    using AndOneConstructions.PdfGenerator;
 
     public static class ExportDataController
     {
@@ -23,7 +24,7 @@
                     .Select(g =>
                         new
                         {
-                            Month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key),
+                            Month = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(g.Key),
                             Count = g.Count()
                         }
                      )
