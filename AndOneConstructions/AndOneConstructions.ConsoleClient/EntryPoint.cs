@@ -76,12 +76,19 @@ namespace AndOneConstructions.ConsoleClient
             //    }
             //}
 
-            ////Test ZIP Extracting and XLSX Reader
-            //ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
-            //ImportDataController.ReadDataFromXLSX("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
-
             ////TEST IMPORTING FROM EXCEL TO SQL
-            //ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            ////Folder with extracted files (Projects-Reports) will be deleted after importing data to excel
+            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+            ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+
+            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Varna-Report.xlsx");
+            ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Varna-Report.xlsx");
+
+            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Burgas-Report.xlsx");
+            ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Burgas-Report.xlsx");
+
+            ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
+            ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
 
             ExportDataController.ExportPdfReport(2013);
         }
