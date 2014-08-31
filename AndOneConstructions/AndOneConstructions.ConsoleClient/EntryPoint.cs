@@ -34,13 +34,13 @@
  * mongodb://teamlich:teamlich@ds063929.mongolab.com:63929/appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac
  * 
  */
+
 namespace AndOneConstructions.ConsoleClient
 {
     using System;
     using System.Globalization;
     using System.Linq;
     using System.Threading;
-
     using AndOneConstructions.Controller;
     using AndOneConstructions.Model;
 
@@ -49,24 +49,47 @@ namespace AndOneConstructions.ConsoleClient
         public static void Main()
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            
+            StartScreen();
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                switch (command)
+                {
+                    case "1":
+                        //Console.Clear();
+                        ZIPImport(); 
+                        StartScreen();
+                        break;
+                    case "2":
+                        //Console.Clear();
+                        ImportDataController.ImportMongoDBEmployees();
+                        StartScreen();
+                        break;
+                    case "3":
+                        //Console.Clear();
+                        ExportDataController.ExportPdfReport(2013);
+                        StartScreen();
+                        break;
+                    default:
+                        break;
+                }
+            }
             ////TEST SQL 
             //var db = new AndOneConstructionsContext();
-
             //var buildings = db.Buildings.ToArray();
-
             //// for testing
             //foreach (var b in buildings)
             //{
             //    Console.WriteLine(b.Name);
             //}
-
             //TEST MONGO
             //var test = new MongoDBEmployee();
             //test.PrintAllEntities();
-
             ////Test Mongo Import
             //ImportDataController.ImportMongoDBEmployees();
-
             //using (var db = new AndOneConstructionsContext())
             //{
             //    var employees = db.Employees.ToList();
@@ -75,7 +98,19 @@ namespace AndOneConstructions.ConsoleClient
             //        Console.WriteLine(item.FirstName + ' ' + item.LastName);
             //    }
             //}
+            //ExportDataController.ExportPdfReport(2013);            
+        }
 
+        public static void StartScreen()
+        {
+            Console.WriteLine("\n Waiting for a command\n");
+            Console.WriteLine("1 - Import Data From Zip Archive With Excel Files");
+            Console.WriteLine("2 - Import Data From MongoDB");
+            Console.WriteLine("3 - Export Projects To PDF File");
+        }
+
+        public static void ZIPImport()
+        {
             ////TEST IMPORTING FROM EXCEL TO SQL
             ////Folder with extracted files (Projects-Reports) will be deleted after importing data to excel
             ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
@@ -89,8 +124,6 @@ namespace AndOneConstructions.ConsoleClient
 
             ImportDataController.ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
             ImportDataController.ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
-
-            ExportDataController.ExportPdfReport(2013);
         }
     }
 }
