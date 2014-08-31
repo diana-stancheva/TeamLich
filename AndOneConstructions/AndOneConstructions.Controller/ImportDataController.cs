@@ -30,8 +30,8 @@
                     
                     var isDepartmentInDB = db.Departments.Where(d => d.Name == emp.Department);
 
-                    Console.WriteLine("empl {0}", isEmployeeInDB.Count());
-                    Console.WriteLine("dep {0}", isDepartmentInDB.Count());
+                    //Console.WriteLine("empl {0}", isEmployeeInDB.Count());
+                    //Console.WriteLine("dep {0}", isDepartmentInDB.Count());
 
                     if (isEmployeeInDB.Count() == 0 && isDepartmentInDB.Count() == 0)
                     {

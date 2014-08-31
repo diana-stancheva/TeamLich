@@ -51,7 +51,7 @@
                         System.Diagnostics.Process.Start(@"ProjectChart.pdf");
                         break;
                         default
-                        : return;
+                        : break;
                 }
             }
         }
