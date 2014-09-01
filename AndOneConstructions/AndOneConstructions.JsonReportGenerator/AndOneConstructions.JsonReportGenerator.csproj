@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D59A84E-2A22-4071-90CB-E025F648CBA3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9E539FE6-F4A3-462D-AEE6-557ECF26F547}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndOneConstructions.ConsoleClient</RootNamespace>
-    <AssemblyName>AndOneConstructions.ConsoleClient</AssemblyName>
+    <RootNamespace>AndOneConstructions.JsonReportGenerator</RootNamespace>
+    <AssemblyName>AndOneConstructions.JsonReportGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,6 +36,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -48,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntryPoint.cs" />
+    <Compile Include="JsonReportCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,25 +58,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AndOneConstructions.Controller\AndOneConstructions.Controller.csproj">
-      <Project>{7bb35258-65cc-4341-b2ff-166bab43c1c6}</Project>
-      <Name>AndOneConstructions.Controller</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Data\AndOneConstructions.Data.csproj">
       <Project>{892cb46f-b7a4-4813-9b79-e1033931eb2e}</Project>
       <Name>AndOneConstructions.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AndOneConstructions.JsonReportGenerator\AndOneConstructions.JsonReportGenerator.csproj">
-      <Project>{9e539fe6-f4a3-462d-aee6-557ecf26f547}</Project>
-      <Name>AndOneConstructions.JsonReportGenerator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Model\AndOneConstructions.Model.csproj">
       <Project>{09f3c1e8-6dd0-4215-a3f5-12b35d30790e}</Project>
       <Name>AndOneConstructions.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">
-      <Project>{e29d5c08-aa6c-4ace-8376-3807e6036f21}</Project>
-      <Name>MongoDB.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
