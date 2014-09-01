@@ -34,8 +34,8 @@
             {
                 ProjectId = projectId,
                 Name = name,
-                StartDate = startDate,
-                EndDate = endDate
+                StartDate = string.Format("{0: dd-MMM-yyyy}", startDate),
+                EndDate = string.Format("{0: dd-MMM-yyyy}", endDate)
             };
 
             JsonSerializer serializer = new JsonSerializer();
