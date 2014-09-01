@@ -1,9 +1,6 @@
 namespace AndOneConstructions.Model
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class AndOneConstructionsContext : DbContext
     {
@@ -13,13 +10,21 @@ namespace AndOneConstructions.Model
         }
 
         public virtual DbSet<Address> Addresses { get; set; }
+
         public virtual DbSet<Building> Buildings { get; set; }
+
         public virtual DbSet<Client> Clients { get; set; }
+
         public virtual DbSet<ConstructionSite> ConstructionSites { get; set; }
+
         public virtual DbSet<Department> Departments { get; set; }
+
         public virtual DbSet<Employee> Employees { get; set; }
+
         public virtual DbSet<Project> Projects { get; set; }
+
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+
         public virtual DbSet<Town> Towns { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
