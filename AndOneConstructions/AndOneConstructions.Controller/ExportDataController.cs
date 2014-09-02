@@ -7,6 +7,8 @@
     using AndOneConstructions.Model;
     using AndOneConstructions.PdfGenerator;
     using AndOneConstructions.JsonReportGenerator;
+    using AndOneConstructions.XMLGenerator;
+    using System.Diagnostics;
 
     public static class ExportDataController
     {
@@ -38,7 +40,7 @@
                                                    .Where(p => p.StartDate.Value.Year == year)
                                                    .GroupBy(p => p.StartDate.Value.Month);
 
-                var sorted = projectsGropedByStartMonth.ToList()
+                var sortedByMonthsName = projectsGropedByStartMonth.ToList()
                                                        .Select(g => new
                                                        {
                                                            Month = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(g.Key),
@@ -46,9 +48,9 @@
                                                        })
                                                        .OrderBy(x => DateTime.ParseExact(x.Month, "MMMM", CultureInfo.InvariantCulture));
 
-                foreach (var group in sorted)
+                foreach (var group in sortedByMonthsName)
                 {
-                    months.Add(group.Month);
+                    months.Add(group.Month.Substring(0, 3));
                     numberOfProjects.Add((double)group.Count);
                 }
 
@@ -58,7 +60,7 @@
                 pdfRenderer.Document = chartCreator.CreateDocument();
 
                 // see bin directory
-                pdfRenderer.Render("ProjectChart");
+                pdfRenderer.Render("../../ProjectChart");
 
                 Console.WriteLine("\nPDF File created!");
                 Console.WriteLine("Open PDF File? yes/no");
@@ -66,11 +68,25 @@
                 switch (command)
                 {
                     case "yes":
-                        System.Diagnostics.Process.Start(@"ProjectChart.pdf");
+                        Process.Start(@"..\..\ProjectChart.pdf");
                         break;
                         default
                         : break;
                 }
+            }
+        }
+
+        public static void ExportXMLReport()
+        {
+            using (var db = new AndOneConstructionsContext())
+            {
+                var projects = db.Projects.ToArray();
+
+                var xmlGenerator = new XElementProjectGenerator(projects);
+
+                xmlGenerator.Generate("../../projects.xml");
+
+                Console.WriteLine("XML exported.");
             }
         }
     }

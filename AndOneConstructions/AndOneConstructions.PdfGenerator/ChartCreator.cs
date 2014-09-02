@@ -2,6 +2,8 @@
 {
     using MigraDoc.DocumentObjectModel;
     using MigraDoc.DocumentObjectModel.Shapes.Charts;
+    using System;
+
     public class ChartCreator : IDocumentCreator
     {
         private double[] values;
@@ -22,6 +24,11 @@
 
             Section section = document.AddSection();
             section.PageSetup.LeftMargin = Unit.FromCentimeter(0.5);
+
+            HeaderFooter header = section.Headers.Primary;
+            var dateTime = DateTime.Now;
+
+            header.AddParagraph("Generated on: " + dateTime.ToString());
 
             section.AddParagraph("And One Constructions Inc.", "Heading1");
             section.AddParagraph("Projects Started In" + " " + year, "Heading2");
@@ -71,17 +78,19 @@
             style.Font.Bold = true;
             style.Font.Color = Colors.DarkBlue;
             style.ParagraphFormat.PageBreakBefore = true;
-            style.ParagraphFormat.SpaceAfter = 6;
+            style.ParagraphFormat.SpaceAfter = 10;
+            style.ParagraphFormat.Alignment = ParagraphAlignment.Center;
 
             style = document.Styles["Heading2"];
             style.Font.Size = 12;
             style.Font.Bold = true;
             style.ParagraphFormat.PageBreakBefore = false;
-            style.ParagraphFormat.SpaceBefore = 6;
-            style.ParagraphFormat.SpaceAfter = 6;
+            style.ParagraphFormat.SpaceBefore = 10;
+            style.ParagraphFormat.SpaceAfter = 10;
+            style.ParagraphFormat.Alignment = ParagraphAlignment.Left;
 
             style = document.Styles[StyleNames.Header];
-            style.ParagraphFormat.AddTabStop("16cm", TabAlignment.Right);
+            style.ParagraphFormat.Alignment = ParagraphAlignment.Right;
 
             style = document.Styles[StyleNames.Footer];
             style.ParagraphFormat.AddTabStop("8cm", TabAlignment.Center);

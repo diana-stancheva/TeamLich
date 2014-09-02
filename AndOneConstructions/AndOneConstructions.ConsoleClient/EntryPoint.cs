@@ -78,10 +78,14 @@ namespace AndOneConstructions.ConsoleClient
                         ExportDataController.ExportPdfReport(2013);
                         StartScreen();
                         break;
-
                         
                     case "4":
                         ExportDataController.CreateJsonReport();
+                        StartScreen();
+                        break;
+
+                    case "5":
+                        ExportDataController.ExportXMLReport();
                         StartScreen();
                         break;
 
@@ -104,6 +108,7 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("2 - Import Data From MongoDB");
             Console.WriteLine("3 - Export Projects To PDF File");
             Console.WriteLine("4 - Export Projects To .json File"); // Subject to change. Made only for test.
+            Console.WriteLine("5 - Export Projects To XML File"); 
         }
 
         public static void ZIPImport()
@@ -153,5 +158,6 @@ namespace AndOneConstructions.ConsoleClient
 
             ExportDataController.ExportPdfReport(2013);
         }
+       
     }
 }
