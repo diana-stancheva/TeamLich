@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="AndOneConstructionEntitiesModel" namespace="AndOneConstructions.MySqlModel" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="AndOneConstructionEntitiesModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="AndOneConstructions.MySqlModel" default="true">
+      <orm:class name="Project" uniqueId="7ba3b9b2-2c87-41e2-8f8e-6702e797cda4">
+        <orm:table name="Projects" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="ProjectId" />
+          </orm:key-generator>
+          <orm:single-field field-name="_projectId" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_projectId" property="ProjectId" behavior="readwrite" uniqueId="67b811db-2dda-4bcd-a86f-98cf800b2605" type="System.Int32">
+          <orm:column name="ProjectId" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="250414ee-08a9-452c-87e1-42ba1f8c29da" type="System.String">
+          <orm:column name="Name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_startDate" property="StartDate" behavior="readwrite" uniqueId="b0e9ad9d-e04d-4166-8189-2a86254cfc41" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="StartDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_endDate" property="EndDate" behavior="readwrite" uniqueId="687032f4-b409-44e3-a845-f4c6da4bc0b4" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="EndDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Projects">
+        <orm:column name="ProjectId" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="StartDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="EndDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>AndOneConstructionsMySqlConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Server=d93ab522-6908-4034-9827-a396016feca4.mysql.sequelizer.com;Database=dbd93ab522690840349827a396016feca4;Uid=omuysinjdtwtmbue;Pwd=dxSZ7cUWJ7q7PYXKxv855mVAWi62K6nPRDGdbBzERbvUeHQq6qvhd2oYKqdWe3kL;</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="7ba3b9b2-2c87-41e2-8f8e-6702e797cda4" name="Project" namespace="AndOneConstructions.MySqlModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="ProjectId">
+      <Property Id="67b811db-2dda-4bcd-a86f-98cf800b2605" name="ProjectId" type="Int32" label="ProjectId : Int32" kind="Persistent" identity="true" fieldName="_projectId" />
+      <Property Id="687032f4-b409-44e3-a845-f4c6da4bc0b4" name="EndDate" type="DateTime" label="EndDate : DateTime" nullable="true" kind="Persistent" fieldName="_endDate" />
+      <Property Id="250414ee-08a9-452c-87e1-42ba1f8c29da" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="b0e9ad9d-e04d-4166-8189-2a86254cfc41" name="StartDate" type="DateTime" label="StartDate : DateTime" nullable="true" kind="Persistent" fieldName="_startDate" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="327ff41c-9f55-456f-a277-dfc90b00178a">
+      <domainContainer name="AndOneConstructionEntitiesModel" namespace="AndOneConstructions.MySqlModel" showPropertiesCompartment="true">
+        <entitySetProperty name="Projects" namespace="AndOneConstructions.MySqlModel" type="Project" label="Projects : IQueryable&lt;AndOneConstructions.MySqlModel.Project&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
