@@ -89,6 +89,10 @@ namespace AndOneConstructions.ConsoleClient
                         StartScreen();
                         break;
 
+                    case "6": ExportDataController.ExportDataToMySql();
+                        StartScreen();
+                        break;
+
                     default:
                         break;
                 }
@@ -107,8 +111,9 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("1 - Import Data From Zip Archive With Excel Files");
             Console.WriteLine("2 - Import Data From MongoDB");
             Console.WriteLine("3 - Export Projects To PDF File");
-            Console.WriteLine("4 - Export Projects To .json File"); // Subject to change. Made only for test.
-            Console.WriteLine("5 - Export Projects To XML File"); 
+            Console.WriteLine("4 - Export Projects To .json File"); 
+            Console.WriteLine("5 - Export Projects To XML File");
+            Console.WriteLine("6 - Export Projects To MySql Database"); 
         }
 
         public static void ZIPImport()

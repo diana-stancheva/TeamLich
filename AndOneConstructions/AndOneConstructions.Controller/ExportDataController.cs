@@ -1,18 +1,22 @@
 ﻿namespace AndOneConstructions.Controller
 {
     using System;
-    using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
+    using System.Collections.Generic;
+
     using AndOneConstructions.Model;
     using AndOneConstructions.PdfGenerator;
     using AndOneConstructions.JsonReportGenerator;
     using AndOneConstructions.XMLGenerator;
-    using System.Diagnostics;
+    using AndOneConstructions.MySqlExport;
+    using AndOneConstructions.MySqlModel;
 
     public static class ExportDataController
     {
         private static AndOneConstructionsContext db = new AndOneConstructionsContext();
+        private static AndOneConstructionEntitiesModel context = new AndOneConstructionEntitiesModel();
 
         public static void CreateJsonReport()
         {
@@ -87,6 +91,21 @@
                 xmlGenerator.Generate("../../projects.xml");
 
                 Console.WriteLine("XML exported.");
+            }
+        }
+
+        public static void ExportDataToMySql()
+        {
+            var projects = db.Projects;
+
+            foreach (var project in projects)
+            {
+                var projectId = project.ProjectId;
+                var name = project.Name;
+                var startDate = project.StartDate;
+                var endDate = project.EndDate;
+
+                ExportToMySql.Export(context, projectId, name, startDate, endDate);
             }
         }
     }

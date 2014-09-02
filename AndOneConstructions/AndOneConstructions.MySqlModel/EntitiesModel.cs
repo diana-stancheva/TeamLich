@@ -24,7 +24,7 @@ namespace AndOneConstructions.MySqlModel
 {
 	public partial class AndOneConstructionEntitiesModel : OpenAccessContext, IAndOneConstructionEntitiesModelUnitOfWork
 	{
-		private static string connectionStringName = @"AndOneConstructionsMySqlConnection";
+        private static string connectionStringName = @"AndOneConstructionsMySqlConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
