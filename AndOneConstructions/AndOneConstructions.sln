@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretDB.Models", "SecretDB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretDB.Data", "SecretDB.Data\SecretDB.Data.csproj", "{F9AEA2D8-185C-44EB-ADF0-306F4AB0F39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.MySqlModel", "AndOneConstructions.MySqlModel\AndOneConstructions.MySqlModel.csproj", "{C50145E6-A244-4F1F-B41F-90D1925B4A00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{F9AEA2D8-185C-44EB-ADF0-306F4AB0F39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9AEA2D8-185C-44EB-ADF0-306F4AB0F39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9AEA2D8-185C-44EB-ADF0-306F4AB0F39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
