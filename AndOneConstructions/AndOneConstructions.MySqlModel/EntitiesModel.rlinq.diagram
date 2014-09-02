@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AndOneConstructionEntitiesModel" isDefault="true">
+    <DomainModelMoniker name="/AndOneConstructionEntitiesModel" />
+    <nestedChildShapes>
+      <classShape Id="dad4d247-8cb3-4443-b56c-0e382bb0949b" absoluteBounds="0.75, 0.75, 1.5, 2.1473746744791669">
+        <DomainClassMoniker name="/AndOneConstructionEntitiesModel/Project" />
+        <nestedChildShapes>
+          <elementListCompartment Id="39131223-93fe-4c8e-b1eb-9c26223cb998" absoluteBounds="0.765, 1.2599999999999998, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="61999a22-a2d7-49ad-8a46-3df8ebe9ba9f" absoluteBounds="0.765, 2.2885953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b1395abe-f5dd-4faa-a0e6-d335df7b17f5" absoluteBounds="0.765, 2.5479850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>
