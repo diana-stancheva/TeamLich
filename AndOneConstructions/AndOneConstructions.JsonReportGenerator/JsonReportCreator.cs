@@ -11,24 +11,9 @@
     {
         private const string ReportFolder = "../../JsonReports/";
         private const string FileName = "{0}.json";
-        private AndOneConstructionsContext db = new AndOneConstructionsContext();
+  
 
-        public void CreateReport()
-        {
-            var projects = this.db.Projects;
-
-            foreach (var project in projects)
-            {
-                var projectId = project.ProjectId;
-                var name = project.Name;
-                var startDate = project.StartDate;
-                var endDate = project.EndDate;
-
-                this.GenerateJson(projectId, name, startDate, endDate);
-            }
-        }
-
-        private void GenerateJson(int projectId, string name, DateTime? startDate, DateTime? endDate)
+        public static void GenerateJson(int projectId, string name, DateTime? startDate, DateTime? endDate)
         {
             object reportData = new
             {

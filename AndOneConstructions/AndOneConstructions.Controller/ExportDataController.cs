@@ -6,12 +6,30 @@
     using System.Linq;
     using AndOneConstructions.Model;
     using AndOneConstructions.PdfGenerator;
+    using AndOneConstructions.JsonReportGenerator;
 
     public static class ExportDataController
     {
+        private static AndOneConstructionsContext db = new AndOneConstructionsContext();
+
+        public static void CreateJsonReport()
+        {
+            var projects = db.Projects;
+
+            foreach (var project in projects)
+            {
+                var projectId = project.ProjectId;
+                var name = project.Name;
+                var startDate = project.StartDate;
+                var endDate = project.EndDate;
+
+                JsonReportCreator.GenerateJson(projectId, name, startDate, endDate);
+            }
+        }
+
         public static void ExportPdfReport(int year)
         {
-            using (var db = new AndOneConstructionsContext())
+            using (db)
             {
                 var months = new List<string>();
                 var numberOfProjects = new List<double>();

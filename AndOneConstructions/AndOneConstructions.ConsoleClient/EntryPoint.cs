@@ -46,8 +46,7 @@ namespace AndOneConstructions.ConsoleClient
 
     using AndOneConstructions.Controller;
     using AndOneConstructions.Model;
-    using AndOneConstructions.JsonReportGenerator;   // To be removed
-
+    
     public class EntryPoint
     {
         public static void Main()
@@ -80,10 +79,10 @@ namespace AndOneConstructions.ConsoleClient
                         StartScreen();
                         break;
 
-                        // Subject to change. Case made just for test.
+                        
                     case "4":
-                        JsonReportCreator report = new JsonReportCreator();
-                        report.CreateReport();
+                        ExportDataController.CreateJsonReport();
+                        StartScreen();
                         break;
 
                     default:
