@@ -198,6 +198,7 @@ namespace AndOneConstructions.ConsoleClient
             }
         }
 
+        // should be deleted just for testing
         private static void TestXMLReader()
         {
             var xmlReader = new XElementProjectReader();
