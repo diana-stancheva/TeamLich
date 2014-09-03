@@ -14,6 +14,7 @@
     using MongoDB.Data.Context;
 
     using AndOneConstructions.Model;
+    using AndOneConstructions.XMLReader;
     
     public static class ImportDataController
     {
@@ -295,6 +296,15 @@
             }
         }
 
+        public static IEnumerable<Project> ParseXMLReport(string fileName)
+        {
+            // fileName should be "../../projectsEmpl.xml"
+            var xmlReader = new XElementProjectReader();
+            var result = xmlReader.Read(fileName);
+
+            return result;
+        }
+
         private static DataSet ReadExcelFile(string filePath)
         {
             DataSet ds = new DataSet();
@@ -370,5 +380,6 @@
             dir.Delete(true);
             Console.WriteLine("Folder Deleted");
         }
+        
     }
 }

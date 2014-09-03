@@ -46,6 +46,7 @@ namespace AndOneConstructions.ConsoleClient
     using System.Globalization;
     using System.Linq;
     using System.Threading;
+    using AndOneConstructions.XMLReader;
 
     public class EntryPoint
     {
@@ -195,6 +196,12 @@ namespace AndOneConstructions.ConsoleClient
                     item.LastUpdate
                     );
             }
+        }
+
+        private static void TestXMLReader()
+        {
+            var xmlReader = new XElementProjectReader();
+            var result = xmlReader.Read("../../projectsEmpl.xml");
         }
     }
 }
