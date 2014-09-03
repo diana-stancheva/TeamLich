@@ -78,6 +78,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AndOneConstructions.ExcellReportGenerator\AndOneConstructions.ExcellReportGenerator.csproj">
+      <Project>{49e69892-7cf7-47e5-b170-eff1205064fa}</Project>
+      <Name>AndOneConstructions.ExcellReportGenerator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.JsonReportGenerator\AndOneConstructions.JsonReportGenerator.csproj">
       <Project>{9e539fe6-f4a3-462d-aee6-557ecf26f547}</Project>
       <Name>AndOneConstructions.JsonReportGenerator</Name>

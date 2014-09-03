@@ -8,7 +8,7 @@
         public static void Export(AndOneConstructionEntitiesModel context, int projectId, string projectName, DateTime? startDate, DateTime? endDate)
         {
             var projects = context.Projects;
-
+            
             if (projects != null)
             {
                 Project newProject = new Project

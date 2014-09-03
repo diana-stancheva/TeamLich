@@ -93,6 +93,10 @@ namespace AndOneConstructions.ConsoleClient
                         StartScreen();
                         break;
 
+                    case "7": ExportDataController.CreateReporToExcell();
+                        StartScreen();
+                        break;
+
                     default:
                         break;
                 }
@@ -105,7 +109,7 @@ namespace AndOneConstructions.ConsoleClient
             // TestMongo();
 
             // Test SQLite
-           // TestSQLite();
+           //TestSQLite();
         }
 
         public static void StartScreen()
@@ -117,6 +121,7 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("4 - Export Projects To .json File");
             Console.WriteLine("5 - Export Projects To XML File");
             Console.WriteLine("6 - Export Projects To MySql Database");
+            Console.WriteLine("7 - Export Projects With Costs In XLS File");
         }
 
         public static void ZIPImport()

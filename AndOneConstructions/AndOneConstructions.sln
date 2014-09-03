@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.ConsoleClient", "AndOneConstructions.ConsoleClient\AndOneConstructions.ConsoleClient.csproj", "{5D59A84E-2A22-4071-90CB-E025F648CBA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49E69892-7CF7-47E5-B170-EFF1205064FA} = {49E69892-7CF7-47E5-B170-EFF1205064FA}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.Data", "AndOneConstructions.Data\AndOneConstructions.Data.csproj", "{892CB46F-B7A4-4813-9B79-E1033931EB2E}"
 EndProject
@@ -33,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.MySqlExport", "AndOneConstructions.MySqlExport\AndOneConstructions.MySqlExport.csproj", "{3CF9C334-CCE3-4AE1-A4C6-18024F567A17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.XMLReader", "AndOneConstructions.XMLReader\AndOneConstructions.XMLReader.csproj", "{4C82BCA6-054F-4499-9471-FB1717E8B517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.ExcellReportGenerator", "AndOneConstructions.ExcellReportGenerator\AndOneConstructions.ExcellReportGenerator.csproj", "{49E69892-7CF7-47E5-B170-EFF1205064FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +97,10 @@ Global
 		{4C82BCA6-054F-4499-9471-FB1717E8B517}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C82BCA6-054F-4499-9471-FB1717E8B517}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C82BCA6-054F-4499-9471-FB1717E8B517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

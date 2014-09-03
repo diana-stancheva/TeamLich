@@ -12,6 +12,7 @@
     using AndOneConstructions.XMLGenerator;
     using AndOneConstructions.MySqlExport;
     using AndOneConstructions.MySqlModel;
+    using AndOneConstructions.ExcellReportGenerator;
 
     public static class ExportDataController
     {
@@ -107,6 +108,11 @@
 
                 ExportToMySql.Export(context, projectId, name, startDate, endDate);
             }
+        }
+
+        public static void CreateReporToExcell()
+        {
+            ExcellReportGenerator.Export(context);
         }
     }
 }
