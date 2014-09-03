@@ -49,7 +49,7 @@
             chart.XAxis.MajorTickMark = TickMarkType.Outside;
 
             chart.YAxis.MajorTickMark = TickMarkType.Outside;
-            chart.YAxis.HasMajorGridlines = true;
+            chart.YAxis.HasMajorGridlines = false;
 
             chart.PlotArea.LineFormat.Color = Colors.DarkGray;
             chart.PlotArea.LineFormat.Width = 1;
