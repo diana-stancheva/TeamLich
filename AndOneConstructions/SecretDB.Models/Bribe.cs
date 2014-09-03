@@ -3,16 +3,14 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    
+
     public class Bribe
     {
         [Key]
-        public int BribeId { get; set; }
+        public long BribeId { get; set; }
 
-        [Required]
         public int Amount { get; set; }
 
-        [Required]
         public string ProjectName { get; set; }
 
         public int ProjectId { get; set; }

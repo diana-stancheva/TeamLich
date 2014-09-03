@@ -37,16 +37,16 @@
 
 namespace AndOneConstructions.ConsoleClient
 {
+    using AndOneConstructions.Controller;
+    using AndOneConstructions.Model;
+    using MongoDB.Data.Context;
+    using SecretDB.Data;
+    using SecretDB.Models;
     using System;
     using System.Globalization;
     using System.Linq;
     using System.Threading;
 
-    using MongoDB.Data.Context;
-
-    using AndOneConstructions.Controller;
-    using AndOneConstructions.Model;
-    
     public class EntryPoint
     {
         public static void Main()
@@ -78,7 +78,7 @@ namespace AndOneConstructions.ConsoleClient
                         ExportDataController.ExportPdfReport(2013);
                         StartScreen();
                         break;
-                        
+
                     case "4":
                         ExportDataController.CreateJsonReport();
                         StartScreen();
@@ -103,6 +103,9 @@ namespace AndOneConstructions.ConsoleClient
 
             // Test Mongo
             // TestMongo();
+
+            // Test SQLite
+           // TestSQLite();
         }
 
         public static void StartScreen()
@@ -111,9 +114,9 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("1 - Import Data From Zip Archive With Excel Files");
             Console.WriteLine("2 - Import Data From MongoDB");
             Console.WriteLine("3 - Export Projects To PDF File");
-            Console.WriteLine("4 - Export Projects To .json File"); 
+            Console.WriteLine("4 - Export Projects To .json File");
             Console.WriteLine("5 - Export Projects To XML File");
-            Console.WriteLine("6 - Export Projects To MySql Database"); 
+            Console.WriteLine("6 - Export Projects To MySql Database");
         }
 
         public static void ZIPImport()
@@ -163,6 +166,35 @@ namespace AndOneConstructions.ConsoleClient
 
             ExportDataController.ExportPdfReport(2013);
         }
-       
+
+        private static void TestSQLite()
+        {
+            SecretDBContext db = new SecretDBContext();
+
+            var br = new Bribe();
+            br.Amount = 15000;
+            br.Description = "YEAH!!!!!!!!";
+            br.LastUpdate = DateTime.Now;
+            br.ProjectName = "TEst";
+            br.ProjectId = 1;
+
+            db.Bribes.Add(br);
+
+            Console.WriteLine(db.SaveChanges());
+
+            var all = db.Bribes.Where(x => x.BribeId > 0).ToList();
+
+            foreach (var item in all)
+            {
+                Console.WriteLine(
+                    item.BribeId + " " +
+                    item.Amount + " " +
+                    item.Description + " " +
+                    item.ProjectName + " " +
+                    item.ProjectId + " " +
+                    item.LastUpdate
+                    );
+            }
+        }
     }
 }

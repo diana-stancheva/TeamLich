@@ -5,10 +5,10 @@
 
     public class SecretDBContext : DbContext
     {
-        public SecretDBContext()
-            : base("SecretDBConnectionString")
-        {
-        }
+        //public SecretDBContext()
+        //    : base("SecretDBConnectionString")
+        //{
+        //}
 
         public IDbSet<Bribe> Bribes { get; set; }
     }
