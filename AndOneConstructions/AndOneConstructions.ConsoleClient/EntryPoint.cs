@@ -46,6 +46,7 @@ namespace AndOneConstructions.ConsoleClient
     using System.Globalization;
     using System.Linq;
     using System.Threading;
+    using AndOneConstructions.XMLReader;
 
     public class EntryPoint
     {
@@ -62,19 +63,16 @@ namespace AndOneConstructions.ConsoleClient
                 switch (command)
                 {
                     case "1":
-                        //Console.Clear();
                         ZIPImport();
                         StartScreen();
                         break;
 
                     case "2":
-                        //Console.Clear();
                         ImportDataController.ImportMongoDBEmployees();
                         StartScreen();
                         break;
 
                     case "3":
-                        //Console.Clear();
                         ExportDataController.ExportPdfReport(2013);
                         StartScreen();
                         break;
@@ -89,14 +87,21 @@ namespace AndOneConstructions.ConsoleClient
                         StartScreen();
                         break;
 
-                    case "6": ExportDataController.ExportDataToMySql();
+                    case "6": 
+                        ExportDataController.ExportDataToMySql();
                         StartScreen();
                         break;
+<<<<<<< HEAD
 
                     case "7": ExportDataController.CreateReporToExcell();
                         StartScreen();
                         break;
 
+=======
+                    case "7":
+                        ImportDataController.ImportXMLToMongo("../../projectsEmpl.xml");
+                        break;
+>>>>>>> 7bcb3550b0b2e136754168d7bd6ce15b8647c0c0
                     default:
                         break;
                 }
@@ -121,7 +126,11 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("4 - Export Projects To .json File");
             Console.WriteLine("5 - Export Projects To XML File");
             Console.WriteLine("6 - Export Projects To MySql Database");
+<<<<<<< HEAD
             Console.WriteLine("7 - Export Projects With Costs In XLS File");
+=======
+            Console.WriteLine("7 - Import Rojects From XML To MongoDB");
+>>>>>>> 7bcb3550b0b2e136754168d7bd6ce15b8647c0c0
         }
 
         public static void ZIPImport()
@@ -200,6 +209,13 @@ namespace AndOneConstructions.ConsoleClient
                     item.LastUpdate
                     );
             }
+        }
+
+        // should be deleted just for testing
+        private static void TestXMLReader()
+        {
+            var xmlReader = new XElementProjectReader();
+            var result = xmlReader.Read("../../projectsEmpl.xml");
         }
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projects>
+  <project name="Industrial Garage Construction" client="SnD Cars Associates">
+	<department name="Architecture">
+		<employee first-name="Konstantin" last-name="Evtimov" />
+	</department>
+	<department name="Finance">
+		<employee first-name="Yana" last-name="Zhekova" />
+	</department>
+  </project>
+  <project name="Deep Sea Complex" client="Deep Sea Company">
+	<department name="Engineering">
+		<employee first-name="Mariya" last-name="Petkova" />
+		<employee first-name="Petko" last-name="Dimitrov" />
+	</department>
+  </project>
+  <project name="Old Town Complex" client="Old Town Company">
+	<department name="Architecture">
+		<employee first-name="Peter" last-name="Ivanov" />
+	</department>
+  </project>
+</projects>

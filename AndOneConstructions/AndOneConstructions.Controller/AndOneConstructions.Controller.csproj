@@ -106,6 +106,10 @@
       <Project>{e94bf186-54a9-4968-8df4-7ede8814d64f}</Project>
       <Name>AndOneConstructions.XMLGenerator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AndOneConstructions.XMLReader\AndOneConstructions.XMLReader.csproj">
+      <Project>{4c82bca6-054f-4499-9471-fb1717e8b517}</Project>
+      <Name>AndOneConstructions.XMLReader</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MongoDB.Data\MongoDB.Data.csproj">
       <Project>{e29d5c08-aa6c-4ace-8376-3807e6036f21}</Project>
       <Name>MongoDB.Data</Name>
