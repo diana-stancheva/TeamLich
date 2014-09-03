@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.XMLRead
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.ExcellReportGenerator", "AndOneConstructions.ExcellReportGenerator\AndOneConstructions.ExcellReportGenerator.csproj", "{49E69892-7CF7-47E5-B170-EFF1205064FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndOneConstructions.CommandHandler", "AndOneConstructions.CommandHandler\AndOneConstructions.CommandHandler.csproj", "{8C49FCB9-9795-478D-B269-CDC659046E8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E69892-7CF7-47E5-B170-EFF1205064FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C49FCB9-9795-478D-B269-CDC659046E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C49FCB9-9795-478D-B269-CDC659046E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C49FCB9-9795-478D-B269-CDC659046E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C49FCB9-9795-478D-B269-CDC659046E8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

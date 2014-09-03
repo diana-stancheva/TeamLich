@@ -66,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AndOneConstructions.CommandHandler\AndOneConstructions.CommandHandler.csproj">
+      <Project>{8c49fcb9-9795-478d-b269-cdc659046e8f}</Project>
+      <Name>AndOneConstructions.CommandHandler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AndOneConstructions.Controller\AndOneConstructions.Controller.csproj">
       <Project>{7bb35258-65cc-4341-b2ff-166bab43c1c6}</Project>
       <Name>AndOneConstructions.Controller</Name>

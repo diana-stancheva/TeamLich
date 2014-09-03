@@ -1,24 +1,24 @@
 ﻿namespace AndOneConstructions.Controller
 {
-    using System;
-    using System.Linq;
-    using System.Data;
-    using System.Data.OleDb;
-    using System.Collections.Generic;
-    using System.Text;
-    using System.IO;
-    using System.Data.Entity.Validation;
-    using Ionic.Zip;
-    using MongoDB.Driver;
-    using MongoDB.Data.Context;
     using AndOneConstructions.Model;
     using AndOneConstructions.XMLReader;
-    using MongoDB.Data;
+    using Ionic.Zip;
     using MongoDB.Bson;
+    using MongoDB.Data;
+    using MongoDB.Data.Context;
+    using MongoDB.Driver;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity.Validation;
+    using System.Data.OleDb;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
     
-    public static class ImportDataController
+    public class ImportDataController
     {
-        public static void ImportMongoDBEmployees()
+        public void ImportMongoDBEmployees()
         {
             using (var db = new AndOneConstructionsContext())
             {
@@ -67,7 +67,7 @@
             }
         }
 
-        public static void ImportDataFromExcel(string filePath)
+        public void ImportDataFromExcel(string filePath)
         {
             var data = ReadExcelFile(filePath);
             var datareader = data.CreateDataReader();
@@ -248,7 +248,7 @@
             DeleteFolder("../../../Projects-Reports"); //deletes extracted reports folder after importing data to sql
         }
 
-        public static void ReadDataFromXLSX(string filePath)
+        public void ReadDataFromXLSX(string filePath)
         {
             var data = ReadExcelFile(filePath);
 
@@ -272,7 +272,7 @@
             }
         }
 
-        public static void ExtractZipFile(string zipPath, string filePath)
+        public void ExtractZipFile(string zipPath, string filePath)
         {
             //EXTRACTS ALL ARCHIVE
             //using (ZipFile zip = ZipFile.Read("../../../Projects-Reports.zip"))
@@ -294,7 +294,7 @@
             }
         }
 
-        public static IEnumerable<Project> ParseXMLReport(string fileName)
+        public IEnumerable<Project> ParseXMLReport(string fileName)
         {
             // fileName should be "../../projectsEmpl.xml"
             var xmlReader = new XElementProjectReader();
@@ -303,7 +303,7 @@
             return result;
         }
 
-        public static void ImportXMLToMongo(string fileName)
+        public void ImportXMLToMongo(string fileName)
         {
             var xmlInfo = ParseXMLReport(fileName);
             var db = DBConnection.GetDBConnection("appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac");
@@ -335,7 +335,24 @@
             }
         }
 
-        private static DataSet ReadExcelFile(string filePath)
+        public void ZIPImport()
+        {
+            ////TEST IMPORTING FROM EXCEL TO SQL
+            ////Folder with extracted files (Projects-Reports) will be deleted after importing data to excel
+           ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+           ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Sofia-Report.xlsx");
+
+           ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Varna-Report.xlsx");
+           ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Varna-Report.xlsx");
+
+           ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Burgas-Report.xlsx");
+           ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Burgas-Report.xlsx");
+
+           ExtractZipFile("../../../Projects-Reports.zip", "Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
+           ImportDataFromExcel("../../../Projects-Reports/12-Jul-2014/Projects-Plovdiv-Report.xlsx");
+        }
+
+        private DataSet ReadExcelFile(string filePath)
         {
             DataSet ds = new DataSet();
 
@@ -377,7 +394,7 @@
             return ds;
         }
 
-        private static string GetConnectionString(string filePath)
+        private string GetConnectionString(string filePath)
         {
             Dictionary<string, string> props = new Dictionary<string, string>();
 
@@ -404,7 +421,7 @@
             return sb.ToString();
         }
 
-        private static void DeleteFolder(string folderPath)
+        private void DeleteFolder(string folderPath)
         {
             var dir = new DirectoryInfo(folderPath);
             dir.Delete(true);

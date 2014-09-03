@@ -1,25 +1,24 @@
 ﻿namespace AndOneConstructions.Controller
 {
+    using AndOneConstructions.ExcellReportGenerator;
+    using AndOneConstructions.JsonReportGenerator;
+    using AndOneConstructions.Model;
+    using AndOneConstructions.MySqlExport;
+    using AndOneConstructions.MySqlModel;
+    using AndOneConstructions.PdfGenerator;
+    using AndOneConstructions.XMLGenerator;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
-    using System.Collections.Generic;
 
-    using AndOneConstructions.Model;
-    using AndOneConstructions.PdfGenerator;
-    using AndOneConstructions.JsonReportGenerator;
-    using AndOneConstructions.XMLGenerator;
-    using AndOneConstructions.MySqlExport;
-    using AndOneConstructions.MySqlModel;
-    using AndOneConstructions.ExcellReportGenerator;
-
-    public static class ExportDataController
+    public class ExportDataController
     {
-        private static AndOneConstructionsContext db = new AndOneConstructionsContext();
-        private static AndOneConstructionEntitiesModel context = new AndOneConstructionEntitiesModel();
+        private AndOneConstructionsContext db = new AndOneConstructionsContext();
+        private AndOneConstructionEntitiesModel context = new AndOneConstructionEntitiesModel();
 
-        public static void CreateJsonReport()
+        public void CreateJsonReport()
         {
             var projects = db.Projects;
 
@@ -34,7 +33,7 @@
             }
         }
 
-        public static void ExportPdfReport(int year)
+        public void ExportPdfReport(int year)
         {
             using (db)
             {
@@ -81,7 +80,7 @@
             }
         }
 
-        public static void ExportXMLReport()
+        public void ExportXMLReport()
         {
             using (var db = new AndOneConstructionsContext())
             {
@@ -95,7 +94,7 @@
             }
         }
 
-        public static void ExportDataToMySql()
+        public void ExportDataToMySql()
         {
             var projects = db.Projects;
 
@@ -110,7 +109,7 @@
             }
         }
 
-        public static void CreateReporToExcell()
+        public void CreateReporToExcell()
         {
             ExcellReportGenerator.Export(context);
         }
