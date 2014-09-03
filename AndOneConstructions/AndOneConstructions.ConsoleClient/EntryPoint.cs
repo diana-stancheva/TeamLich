@@ -63,19 +63,16 @@ namespace AndOneConstructions.ConsoleClient
                 switch (command)
                 {
                     case "1":
-                        //Console.Clear();
                         ZIPImport();
                         StartScreen();
                         break;
 
                     case "2":
-                        //Console.Clear();
                         ImportDataController.ImportMongoDBEmployees();
                         StartScreen();
                         break;
 
                     case "3":
-                        //Console.Clear();
                         ExportDataController.ExportPdfReport(2013);
                         StartScreen();
                         break;
@@ -90,10 +87,13 @@ namespace AndOneConstructions.ConsoleClient
                         StartScreen();
                         break;
 
-                    case "6": ExportDataController.ExportDataToMySql();
+                    case "6": 
+                        ExportDataController.ExportDataToMySql();
                         StartScreen();
                         break;
-
+                    case "7":
+                        ImportDataController.ImportXMLToMongo("../../projectsEmpl.xml");
+                        break;
                     default:
                         break;
                 }
@@ -118,6 +118,7 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("4 - Export Projects To .json File");
             Console.WriteLine("5 - Export Projects To XML File");
             Console.WriteLine("6 - Export Projects To MySql Database");
+            Console.WriteLine("7 - Import Rojects From XML To MongoDB");
         }
 
         public static void ZIPImport()
