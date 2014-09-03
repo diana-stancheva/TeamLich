@@ -7,14 +7,14 @@
     using System.Collections.Generic;
     using System.Text;
     using System.IO;
-
     using System.Data.Entity.Validation;
     using Ionic.Zip;
     using MongoDB.Driver;
     using MongoDB.Data.Context;
-
     using AndOneConstructions.Model;
     using AndOneConstructions.XMLReader;
+    using MongoDB.Data;
+    using MongoDB.Bson;
     
     public static class ImportDataController
     {
@@ -69,7 +69,6 @@
 
         public static void ImportDataFromExcel(string filePath)
         {
-            
             var data = ReadExcelFile(filePath);
             var datareader = data.CreateDataReader();
 
@@ -281,7 +280,6 @@
             //    zip.ExtractAll("../../../");
             //    Console.WriteLine("Zip Extracted");
             //}
-
             //EXTRACTS ZIP - FILE BY FILE
             using (ZipFile zip = ZipFile.Read(zipPath))
             {
@@ -303,6 +301,38 @@
             var result = xmlReader.Read(fileName);
 
             return result;
+        }
+
+        public static void ImportXMLToMongo(string fileName)
+        {
+            var xmlInfo = ParseXMLReport(fileName);
+            var db = DBConnection.GetDBConnection("appharbor_f580ae0d-6ef8-4aac-b142-db0920bfddac");
+
+            var collection = db.GetCollection<BsonDocument>("Projects");
+
+            foreach (var item in xmlInfo)
+            {
+                var employees = item.Employees;
+                var cnt = 1;
+
+                BsonDocument document = new BsonDocument();
+                document.Add("ProjectName", item.Name);
+
+                foreach (var employee in employees)
+                {
+                    document.Add("Employee" + cnt, new BsonDocument
+                    {
+                        { "EmployeeFirstName", employee.FirstName },
+                        { "EmployeeLastName", employee.LastName },
+                        { "EmployeeDepartment", employee.Department.Name }
+                    });
+
+                    cnt++;
+
+                    Console.WriteLine("{0} from department {1}, added to project {2} ", employee.FirstName + employee.LastName, employee.Department.Name, item.Name);
+                }
+                collection.Insert(document);
+            }
         }
 
         private static DataSet ReadExcelFile(string filePath)
@@ -380,6 +410,5 @@
             dir.Delete(true);
             Console.WriteLine("Folder Deleted");
         }
-        
     }
 }
