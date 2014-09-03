@@ -24,6 +24,7 @@
             foreach (var project in this.projects)
             {
                 var xmlProject = new XElement(xmlNamespace + "project");
+                xmlProject.SetAttributeValue("name", project.Name);
                 xmlProject.SetAttributeValue("client", project.Client.Name);
 
                 foreach (var employee in project.Employees)
