@@ -91,17 +91,15 @@ namespace AndOneConstructions.ConsoleClient
                         ExportDataController.ExportDataToMySql();
                         StartScreen();
                         break;
-<<<<<<< HEAD
 
-                    case "7": ExportDataController.CreateReporToExcell();
-                        StartScreen();
-                        break;
-
-=======
                     case "7":
                         ImportDataController.ImportXMLToMongo("../../projectsEmpl.xml");
                         break;
->>>>>>> 7bcb3550b0b2e136754168d7bd6ce15b8647c0c0
+
+                    case "8": ExportDataController.CreateReporToExcell();
+                        StartScreen();
+                        break;
+
                     default:
                         break;
                 }
@@ -125,12 +123,9 @@ namespace AndOneConstructions.ConsoleClient
             Console.WriteLine("3 - Export Projects To PDF File");
             Console.WriteLine("4 - Export Projects To .json File");
             Console.WriteLine("5 - Export Projects To XML File");
-            Console.WriteLine("6 - Export Projects To MySql Database");
-<<<<<<< HEAD
-            Console.WriteLine("7 - Export Projects With Costs In XLS File");
-=======
+            Console.WriteLine("6 - Export Projects To MySql Database");          
             Console.WriteLine("7 - Import Rojects From XML To MongoDB");
->>>>>>> 7bcb3550b0b2e136754168d7bd6ce15b8647c0c0
+            Console.WriteLine("8 - Export Projects With Costs In XLS File");
         }
 
         public static void ZIPImport()
